@@ -31,8 +31,8 @@ flowchart TD
     D --> E[Optional filter:<br/>active-offloaded mode only]
     E --> F[LightGBM regression<br/>predict TP2 from 8 other sensors]
     F --> G[Chronological CV<br/>TimeSeriesSplit, out-of-fold predictions]
-    G --> H[Calibrate threshold<br/>99th percentile of |OOF residual|]
-    H --> I[Score every bin<br/>score = |actual - predicted| / threshold]
+    G --> H["Calibrate threshold<br/>99th percentile of abs(OOF residual)"]
+    H --> I["Score every bin<br/>score = abs(actual - predicted) / threshold"]
     I --> J[Flag bins with score >= 1<br/>group them into runs]
     J --> K[Dashboard + CSV export]
 ```
