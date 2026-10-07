@@ -1,0 +1,19 @@
+[project]
+name = "compressor-anomaly-detection"
+version = "0.1.0"
+description = "MetroPT-3 compressor data exploration and regression notebooks"
+requires-python = ">=3.10"
+dependencies = [
+    "ipykernel",
+    "lightgbm",
+    "nbclient",
+    "nbformat",
+    "numpy",
+    "pandas",
+    "plotly",
+    "scikit-learn",
+    "streamlit",
+]
+
+[tool.uv]
+package = false
